@@ -25,7 +25,9 @@
 #include <stdlib.h>
 #include <string.h>
 #include <errno.h>
+#ifdef TIOCGWINSZ
 #include <sys/ioctl.h>
+#endif
 #include <sys/types.h>
 #include <sys/time.h>
 #include <sys/stat.h>
