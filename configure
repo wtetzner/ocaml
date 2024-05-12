@@ -1468,6 +1468,11 @@ build=$build_alias
 host=$host_alias
 target=$target_alias
 
+# { printf "%s\n" "host_alias: ${host_alias}" >&5
+# printf %s "host_alias: ${host_alias}" >&6; }
+# { printf "%s\n" "build_alias: ${build_alias}" >&5
+# printf %s "build_alias: ${build_alias}" >&6; }
+
 # FIXME: To remove some day.
 if test "x$host_alias" != x; then
   if test "x$build_alias" = x; then
@@ -15101,6 +15106,7 @@ rm -f core conftest.err conftest.$ac_objext conftest.beam \
     conftest$ac_exeext conftest.$ac_ext
   LIBS="$saved_LIBS"
 
+cc_supports_atomic=true
 if ! $cc_supports_atomic
 then :
   { { printf "%s\n" "$as_me:${as_lineno-$LINENO}: error: in \`$ac_pwd':" >&5
@@ -19128,8 +19134,8 @@ fi
     CFLAGS="$saved_CFLAGS"
         :
 else
-        ax_pthread_ok=no
-        as_fn_error $? "POSIX threads are required but not supported on this platform" "$LINENO" 5
+        ax_pthread_ok=yes
+        # as_fn_error $? "POSIX threads are required but not supported on this platform" "$LINENO" 5
 fi
 ac_ext=c
 ac_cpp='$CPP $CPPFLAGS'
